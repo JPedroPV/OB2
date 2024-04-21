@@ -1,0 +1,10 @@
+<div *ngIf="noPurchaseHistory()" class = "cart-page">
+    <h1>No purchase history yet!</h1>
+</div>
+<div *ngFor="let cart of purchaseHistory" class="cart-page">
+    <mat-grid-list cols="1" rowHeight="500px">
+        <mat-grid-tile *ngFor="let book of cart.books">
+            <app-small-book-view [book]="book"></app-small-book-view>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

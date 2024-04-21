@@ -1,0 +1,10 @@
+<div class="yellowstripe"></div>
+<a [routerLink]="['/']">
+  <img src="assets/andromeda_banner_layer_1.png" alt="andromeda banner" style="height: 68px; position: absolute; top: 0px; left: -5%;">
+</a>
+
+<a *ngIf="isMember()" routerLink="/purchase-history" class="button fancy-button" style="position: absolute; top: 14px; right: 212px;"><em class="material-icons">history</em>Purchase History</a>
+<a (click)="login()" class="button fancy-button" style="position: absolute; top: 14px; right: 108px;"><em class="material-icons">person</em>Login</a>
+<a routerLink="/cart" class="button fancy-button" style="position: absolute; top: 14px; right: 14px;"><em class="material-icons">shopping_cart</em>Cart</a>
+
+<app-search-bar class="search-form" (searchEvent)="sendToSearch($event)">

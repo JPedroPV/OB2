@@ -1,0 +1,13 @@
+<div class="cart-page">
+    <div class="cart-total">
+        <h2>Cart</h2>
+        <p>Items: {{ getCartSize() }}</p>
+        <p>Total: ${{ getTotal() }}</p>
+        <button [disabled]="getCartSize() == 0" (click)="checkout()">Checkout</button>
+    </div>
+    <mat-grid-list cols="1" rowHeight="500px" *ngIf="setIndex()">
+        <mat-grid-tile *ngFor="let book of books">
+            <app-small-book-view [book]="book" [cartIndex]="getIndex()"></app-small-book-view>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

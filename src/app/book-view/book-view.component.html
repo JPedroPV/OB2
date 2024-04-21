@@ -1,0 +1,22 @@
+<div *ngIf="book">
+    <h1>{{ book.title }}</h1>
+    <img [src]="book.imageUrl" style="max-width: 300px;">
+    <mat-divider style="color: black;"></mat-divider>
+    <h4>{{ book.description }}</h4>
+    <mat-divider style="color: black;"></mat-divider>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.getGenres() }}</p>
+    <p>Published: {{ book.date }}</p>
+    <p>Publisher: {{ book.publisher }}</p>
+    <p>Ratings: {{ book.rating }}/5</p>
+    <p>Price: ${{ book.price }}</p>
+    <p>Type:<mat-icon>{{ book.getIcon() }}</mat-icon> {{ book.type }}</p>
+    <p *ngIf="book.isPhysical() || book.isEbook()">Pages: {{ book.pages }}</p>
+    <p *ngIf="book.isPhysical()">Stock: {{ book.stock }}</p>
+    <p *ngIf="book.isAudio()">Length: {{ book.getLengthString() }}</p>
+    <p *ngIf="book.isAudio()">Narrator: {{ book.narrator }} kN</p>
+  
+    <button type="button" (click)="addToCart()">Add to Cart</button>
+    <button type="button" (click)="goBack()" style="background-color:grey">Back</button>
+  </div>
+  

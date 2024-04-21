@@ -1,0 +1,19 @@
+mat-card {
+    background-color: rgba(250,240,230,0.8);
+    margin: 20px;
+    width: 350px;
+    height: 400px;
+}
+
+mat-raised-button {
+    background-color: rgba(250,240,230,0.95);;
+}
+
+mat-card-content {
+    margin:auto;
+}
+
+mat-card-header {
+    margin:auto;
+    margin-left:0;
+}

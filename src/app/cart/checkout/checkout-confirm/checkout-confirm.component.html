@@ -1,0 +1,12 @@
+<div>
+    <h2>Confirm Purchase</h2>
+    <p>Input where you want this delivered</p>
+    <input type="tel" placeholder="Address" [(ngModel)]="address" [value]="address">
+    <p>Input your payment information</p>
+    <input type="tel" placeholder="Payment Information" [(ngModel)]="payment" [value]="payment">
+    <br>
+    <mat-checkbox *ngIf="isMember()" (change)="saveCheckoutInfo($event.checked)">I want to use this checkout info in the future</mat-checkbox>
+    <mat-checkbox (change)="setTerms($event.checked)">I pinky promise the above information is true</mat-checkbox>
+    <button [disabled]="disable" (click)="onCheckout()">Confirm</button>
+    <button style="background-color:grey; margin-left: 10px;" (click)="onCancel()">Cancel</button>
+</div>
